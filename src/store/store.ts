@@ -1,14 +1,14 @@
 // store/store.ts
 
 import { configureStore } from '@reduxjs/toolkit';
+import { authReducer } from './slices/authSlice';
 
-// 💡 We are not adding any reducers yet, but we define a function
-// to create the store instance, which is the pattern required by the App Router.
 export const makeStore = () => {
   return configureStore({
     reducer: {
       // [future_slice_name]: [future_slice_reducer]
       // [future_api_slice_name]: [future_api_reducer],
+      auth: authReducer,
     },
     // Optional: Add middleware like RTK Query here later
     // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware),
